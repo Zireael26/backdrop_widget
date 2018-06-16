@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'panels.dart';
 
 void main() => runApp(new MyApp());
 
@@ -57,9 +58,9 @@ class _BackDropHomePageState extends State<BackDropHomePage>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: new AppBar(
-        title: new Text('BackDrop'),
-        leading: new IconButton(
+      appBar: AppBar(
+        title: Text('BackDrop'),
+        leading: IconButton(
           icon: AnimatedIcon(
             icon: AnimatedIcons.close_menu,
             progress: animController.view,
@@ -72,7 +73,7 @@ class _BackDropHomePageState extends State<BackDropHomePage>
         elevation: 0.0,
         // elevation is set to 0 because it is supposed to be part of the back panel
       ),
-      body: Container(),
+      body: new Panels(controller: animController,),
     );
   }
 }
